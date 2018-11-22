@@ -1,5 +1,5 @@
 # Process-Manager
-a simple windows process manager/computer information gatherer
+a simple windows .NET C# process manager/computer information gatherer
 
 What folders contain:
 ProcessManager: The GUI latest release of the project. (Compiled .exe included)
