@@ -1,0 +1,6 @@
+C:\Users\The Boys\Coding Experiments\ProcssMan\ProcssMan\bin\Debug\ProcssMan.exe.config
+C:\Users\The Boys\Coding Experiments\ProcssMan\ProcssMan\bin\Debug\ProcssMan.exe
+C:\Users\The Boys\Coding Experiments\ProcssMan\ProcssMan\bin\Debug\ProcssMan.pdb
+C:\Users\The Boys\Coding Experiments\ProcssMan\ProcssMan\obj\Debug\ProcssMan.exe
+C:\Users\The Boys\Coding Experiments\ProcssMan\ProcssMan\obj\Debug\ProcssMan.pdb
+C:\Users\The Boys\Coding Experiments\ProcssMan\ProcssMan\obj\Debug\ProcssMan.csprojResolveAssemblyReference.cache
