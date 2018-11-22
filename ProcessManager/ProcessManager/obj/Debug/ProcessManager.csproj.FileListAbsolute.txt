@@ -1,0 +1,11 @@
+C:\Users\The Boys\Coding Experiments\ProcessManager\ProcessManager\bin\Debug\ProcessManager.exe.config
+C:\Users\The Boys\Coding Experiments\ProcessManager\ProcessManager\bin\Debug\ProcessManager.exe
+C:\Users\The Boys\Coding Experiments\ProcessManager\ProcessManager\bin\Debug\ProcessManager.pdb
+C:\Users\The Boys\Coding Experiments\ProcessManager\ProcessManager\obj\Debug\ProcessManager.csprojResolveAssemblyReference.cache
+C:\Users\The Boys\Coding Experiments\ProcessManager\ProcessManager\obj\Debug\ProcessManager.Form1.resources
+C:\Users\The Boys\Coding Experiments\ProcessManager\ProcessManager\obj\Debug\ProcessManager.Properties.Resources.resources
+C:\Users\The Boys\Coding Experiments\ProcessManager\ProcessManager\obj\Debug\ProcessManager.csproj.GenerateResource.Cache
+C:\Users\The Boys\Coding Experiments\ProcessManager\ProcessManager\obj\Debug\ProcessManager.exe
+C:\Users\The Boys\Coding Experiments\ProcessManager\ProcessManager\obj\Debug\ProcessManager.pdb
+C:\Users\The Boys\Coding Experiments\ProcessManager\ProcessManager\obj\Debug\ProcessManager.Coputer_Info.resources
+C:\Users\The Boys\Coding Experiments\ProcessManager\ProcessManager\obj\Debug\ProcessManager.Drives.resources
