@@ -22,7 +22,6 @@ namespace ProcessManager
             label2.Text = Environment.MachineName;
             label4.Text = Environment.OSVersion.ToString();
             label6.Text = Environment.ProcessorCount.ToString();
-            label7.Text = Environment.Is64BitProcess.ToString();
             label9.Text = Environment.UserDomainName.ToString();
             label12.Text = Environment.UserName.ToString();
             label14.Text = Environment.Version.ToString();
@@ -33,6 +32,11 @@ namespace ProcessManager
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

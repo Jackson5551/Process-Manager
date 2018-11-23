@@ -84,5 +84,11 @@ namespace ProcessManager
             Drives frm = new Drives();
             frm.Show();
         }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About frm = new About();
+            frm.Show();
+        }
     }
 }

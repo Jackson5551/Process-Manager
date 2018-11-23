@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("ProcessManager")]
-[assembly: AssemblyDescription("ProcessManager")]
+[assembly: AssemblyDescription("This is a project by @Jackson5551 on Github licensed under the GNU General Public License v3.0")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HakCorp")]
 [assembly: AssemblyProduct("ProcessManager")]
