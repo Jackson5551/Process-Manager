@@ -48,38 +48,45 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblRAM_Bottom = new System.Windows.Forms.Label();
+            this.lblCPU_Bottom = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lblRAM = new System.Windows.Forms.Label();
+            this.lblCPU = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.progressBarRAM = new System.Windows.Forms.ProgressBar();
+            this.progressBarCPU = new System.Windows.Forms.ProgressBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pcCPU = new System.Diagnostics.PerformanceCounter();
             this.pcRAM = new System.Diagnostics.PerformanceCounter();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.progressBarCPU = new System.Windows.Forms.ProgressBar();
-            this.progressBarRAM = new System.Windows.Forms.ProgressBar();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblCPU = new System.Windows.Forms.Label();
-            this.lblRAM = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblRAM_Bottom = new System.Windows.Forms.Label();
-            this.lblCPU_Bottom = new System.Windows.Forms.Label();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.pcLOGICALDISK = new System.Diagnostics.PerformanceCounter();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.computerInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.disksAndDrivesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cLIBETAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblNUMPROCS = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcCPU)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcRAM)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcCPU)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcRAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcLOGICALDISK)).BeginInit();
-            this.panel2.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -146,15 +153,17 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.richTextBox1.Font = new System.Drawing.Font("Exo 2", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(3, 3);
             this.richTextBox1.Name = "richTextBox1";
@@ -207,6 +216,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblNUMPROCS);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.lblRAM_Bottom);
             this.panel1.Controls.Add(this.lblCPU_Bottom);
             this.panel1.Controls.Add(this.label4);
@@ -217,6 +228,42 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(630, 56);
             this.panel1.TabIndex = 7;
+            // 
+            // lblRAM_Bottom
+            // 
+            this.lblRAM_Bottom.AutoSize = true;
+            this.lblRAM_Bottom.Location = new System.Drawing.Point(44, 30);
+            this.lblRAM_Bottom.Name = "lblRAM_Bottom";
+            this.lblRAM_Bottom.Size = new System.Drawing.Size(26, 13);
+            this.lblRAM_Bottom.TabIndex = 12;
+            this.lblRAM_Bottom.Text = "0 %";
+            // 
+            // lblCPU_Bottom
+            // 
+            this.lblCPU_Bottom.AutoSize = true;
+            this.lblCPU_Bottom.Location = new System.Drawing.Point(44, 13);
+            this.lblCPU_Bottom.Name = "lblCPU_Bottom";
+            this.lblCPU_Bottom.Size = new System.Drawing.Size(26, 13);
+            this.lblCPU_Bottom.TabIndex = 11;
+            this.lblCPU_Bottom.Text = "0 %";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(9, 30);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(34, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "RAM:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(9, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(29, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "CPU:";
             // 
             // button5
             // 
@@ -253,6 +300,19 @@
             this.tabPage1.Text = "Processes";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(469, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(150, 337);
+            this.panel2.TabIndex = 6;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.lblRAM);
@@ -269,57 +329,15 @@
             this.tabPage2.Text = "Rescources";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // pcCPU
+            // lblRAM
             // 
-            this.pcCPU.CategoryName = "Processor";
-            this.pcCPU.CounterName = "% Processor Time";
-            this.pcCPU.InstanceName = "_Total";
-            // 
-            // pcRAM
-            // 
-            this.pcRAM.CategoryName = "Memory";
-            this.pcRAM.CounterName = "% Committed Bytes In Use";
-            // 
-            // timer
-            // 
-            this.timer.Interval = 1000;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(8, 30);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "CPU:";
-            // 
-            // progressBarCPU
-            // 
-            this.progressBarCPU.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBarCPU.Location = new System.Drawing.Point(43, 21);
-            this.progressBarCPU.Name = "progressBarCPU";
-            this.progressBarCPU.Size = new System.Drawing.Size(559, 32);
-            this.progressBarCPU.TabIndex = 1;
-            // 
-            // progressBarRAM
-            // 
-            this.progressBarRAM.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBarRAM.Location = new System.Drawing.Point(43, 99);
-            this.progressBarRAM.Name = "progressBarRAM";
-            this.progressBarRAM.Size = new System.Drawing.Size(559, 32);
-            this.progressBarRAM.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 108);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "RAM:";
+            this.lblRAM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblRAM.AutoSize = true;
+            this.lblRAM.Location = new System.Drawing.Point(565, 134);
+            this.lblRAM.Name = "lblRAM";
+            this.lblRAM.Size = new System.Drawing.Size(26, 13);
+            this.lblRAM.TabIndex = 5;
+            this.lblRAM.Text = "0 %";
             // 
             // lblCPU
             // 
@@ -331,51 +349,41 @@
             this.lblCPU.TabIndex = 4;
             this.lblCPU.Text = "0 %";
             // 
-            // lblRAM
+            // label2
             // 
-            this.lblRAM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblRAM.AutoSize = true;
-            this.lblRAM.Location = new System.Drawing.Point(565, 134);
-            this.lblRAM.Name = "lblRAM";
-            this.lblRAM.Size = new System.Drawing.Size(26, 13);
-            this.lblRAM.TabIndex = 5;
-            this.lblRAM.Text = "0 %";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 108);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "RAM:";
             // 
-            // label3
+            // progressBarRAM
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "CPU:";
+            this.progressBarRAM.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBarRAM.Location = new System.Drawing.Point(43, 99);
+            this.progressBarRAM.Name = "progressBarRAM";
+            this.progressBarRAM.Size = new System.Drawing.Size(559, 32);
+            this.progressBarRAM.TabIndex = 2;
             // 
-            // label4
+            // progressBarCPU
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 30);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "RAM:";
+            this.progressBarCPU.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBarCPU.Location = new System.Drawing.Point(43, 21);
+            this.progressBarCPU.Name = "progressBarCPU";
+            this.progressBarCPU.Size = new System.Drawing.Size(559, 32);
+            this.progressBarCPU.TabIndex = 1;
             // 
-            // lblRAM_Bottom
+            // label1
             // 
-            this.lblRAM_Bottom.AutoSize = true;
-            this.lblRAM_Bottom.Location = new System.Drawing.Point(44, 30);
-            this.lblRAM_Bottom.Name = "lblRAM_Bottom";
-            this.lblRAM_Bottom.Size = new System.Drawing.Size(26, 13);
-            this.lblRAM_Bottom.TabIndex = 12;
-            this.lblRAM_Bottom.Text = "0 %";
-            // 
-            // lblCPU_Bottom
-            // 
-            this.lblCPU_Bottom.AutoSize = true;
-            this.lblCPU_Bottom.Location = new System.Drawing.Point(44, 13);
-            this.lblCPU_Bottom.Name = "lblCPU_Bottom";
-            this.lblCPU_Bottom.Size = new System.Drawing.Size(26, 13);
-            this.lblCPU_Bottom.TabIndex = 11;
-            this.lblCPU_Bottom.Text = "0 %";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 30);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(29, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "CPU:";
             // 
             // tabPage3
             // 
@@ -413,29 +421,82 @@
             this.chart1.Size = new System.Drawing.Size(616, 337);
             this.chart1.TabIndex = 0;
             // 
+            // pcCPU
+            // 
+            this.pcCPU.CategoryName = "Processor";
+            this.pcCPU.CounterName = "% Processor Time";
+            this.pcCPU.InstanceName = "_Total";
+            // 
+            // pcRAM
+            // 
+            this.pcRAM.CategoryName = "Memory";
+            this.pcRAM.CounterName = "% Committed Bytes In Use";
+            // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
             // pcLOGICALDISK
             // 
             this.pcLOGICALDISK.CategoryName = "LogicalDisk";
             this.pcLOGICALDISK.CounterName = "% Free Space";
             // 
-            // panel2
+            // contextMenuStrip1
             // 
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(469, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(150, 337);
-            this.panel2.TabIndex = 6;
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Exo 2", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.computerInfoToolStripMenuItem,
+            this.disksAndDrivesToolStripMenuItem,
+            this.cLIBETAToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(165, 70);
+            // 
+            // computerInfoToolStripMenuItem
+            // 
+            this.computerInfoToolStripMenuItem.Name = "computerInfoToolStripMenuItem";
+            this.computerInfoToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.computerInfoToolStripMenuItem.Text = "Computer Info";
+            this.computerInfoToolStripMenuItem.Click += new System.EventHandler(this.computerInfoToolStripMenuItem_Click);
+            // 
+            // disksAndDrivesToolStripMenuItem
+            // 
+            this.disksAndDrivesToolStripMenuItem.Name = "disksAndDrivesToolStripMenuItem";
+            this.disksAndDrivesToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.disksAndDrivesToolStripMenuItem.Text = "Disks and Drives";
+            this.disksAndDrivesToolStripMenuItem.Click += new System.EventHandler(this.disksAndDrivesToolStripMenuItem_Click);
+            // 
+            // cLIBETAToolStripMenuItem
+            // 
+            this.cLIBETAToolStripMenuItem.Name = "cLIBETAToolStripMenuItem";
+            this.cLIBETAToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.cLIBETAToolStripMenuItem.Text = "CLI (BETA)";
+            this.cLIBETAToolStripMenuItem.Click += new System.EventHandler(this.cLIBETAToolStripMenuItem_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(99, 30);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Processes:";
+            // 
+            // lblNUMPROCS
+            // 
+            this.lblNUMPROCS.AutoSize = true;
+            this.lblNUMPROCS.Location = new System.Drawing.Point(166, 30);
+            this.lblNUMPROCS.Name = "lblNUMPROCS";
+            this.lblNUMPROCS.Size = new System.Drawing.Size(14, 13);
+            this.lblNUMPROCS.TabIndex = 14;
+            this.lblNUMPROCS.Text = "0";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 449);
+            this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -452,15 +513,16 @@
             this.panel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pcCPU)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcRAM)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pcLOGICALDISK)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcCPU)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcRAM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcLOGICALDISK)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -503,6 +565,12 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Diagnostics.PerformanceCounter pcLOGICALDISK;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem computerInfoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem disksAndDrivesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cLIBETAToolStripMenuItem;
+        private System.Windows.Forms.Label lblNUMPROCS;
+        private System.Windows.Forms.Label label5;
     }
 }
 

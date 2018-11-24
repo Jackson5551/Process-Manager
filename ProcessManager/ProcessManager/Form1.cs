@@ -34,8 +34,8 @@ namespace ProcessManager
             Process[] processlist = Process.GetProcesses();
 
             foreach (Process theprocess in processlist)
-            {
-                string prcs = "Process: '" + theprocess.ProcessName + "'    ID: '" + theprocess.Id + "'    Macine Name: '"+Environment.MachineName+"'";
+            {           
+                string prcs = "Process: '" + theprocess.ProcessName + "'  ||  ID: '" + theprocess.Id + "'  ||  Macine Name: '"+Environment.MachineName+"'";
                 richTextBox1.AppendText(prcs);
                 richTextBox1.AppendText("\n");
                 Application.DoEvents(); // This keeps your form responsive by processing events
@@ -93,8 +93,11 @@ namespace ProcessManager
 
         private void timer_Tick(object sender, EventArgs e)
         {
+            Process[] processlist = Process.GetProcesses();
+
             float fcpu = pcCPU.NextValue();
             float fram = pcRAM.NextValue();
+            float runprocs = processlist.GetLength(0);
             progressBarCPU.Value = (int)fcpu;
             progressBarRAM.Value = (int)fram;
             lblCPU.Text = string.Format("{0:0.00}%", fcpu);
@@ -103,6 +106,7 @@ namespace ProcessManager
             lblRAM_Bottom.Text = string.Format("{0:0.00}%", fram);
             chart1.Series["CPU"].Points.AddY(fcpu);
             chart1.Series["RAM"].Points.AddY(fram);
+            lblNUMPROCS.Text = string.Format("{0:0}", runprocs);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -113,6 +117,23 @@ namespace ProcessManager
         private void lblTotalSpace_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void computerInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Coputer_Info frm = new Coputer_Info();
+            frm.Show();
+        }
+
+        private void disksAndDrivesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Drives frm = new Drives();
+            frm.Show();
+        }
+
+        private void cLIBETAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("ProcssMan.exe");
         }
     }
 }
