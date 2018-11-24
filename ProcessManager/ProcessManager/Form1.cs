@@ -109,5 +109,10 @@ namespace ProcessManager
         {
             timer.Start();
         }
+
+        private void lblTotalSpace_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

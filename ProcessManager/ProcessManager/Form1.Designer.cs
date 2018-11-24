@@ -67,6 +67,8 @@
             this.lblCPU_Bottom = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.pcLOGICALDISK = new System.Diagnostics.PerformanceCounter();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -76,12 +78,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcRAM)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcLOGICALDISK)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(552, 29);
+            this.button1.Location = new System.Drawing.Point(552, 30);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -150,12 +154,12 @@
             // 
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.richTextBox1.Font = new System.Drawing.Font("Exo 2", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(3, 3);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(399, 329);
+            this.richTextBox1.Size = new System.Drawing.Size(457, 337);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -163,17 +167,17 @@
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Location = new System.Drawing.Point(432, 53);
+            this.textBox1.Location = new System.Drawing.Point(3, 3);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 21);
+            this.textBox1.Size = new System.Drawing.Size(144, 21);
             this.textBox1.TabIndex = 3;
             // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(472, 102);
+            this.button2.Location = new System.Drawing.Point(40, 52);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(62, 23);
             this.button2.TabIndex = 4;
             this.button2.Text = "Kill";
             this.button2.UseVisualStyleBackColor = true;
@@ -182,9 +186,9 @@
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(472, 79);
+            this.button3.Location = new System.Drawing.Point(40, 29);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(62, 23);
             this.button3.TabIndex = 5;
             this.button3.Text = "Select";
             this.button3.UseVisualStyleBackColor = true;
@@ -193,7 +197,7 @@
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button4.Location = new System.Drawing.Point(12, 0);
+            this.button4.Location = new System.Drawing.Point(12, 282);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(117, 23);
             this.button4.TabIndex = 6;
@@ -207,49 +211,46 @@
             this.panel1.Controls.Add(this.lblCPU_Bottom);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.button4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 394);
+            this.panel1.Location = new System.Drawing.Point(0, 393);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(630, 55);
+            this.panel1.Size = new System.Drawing.Size(630, 56);
             this.panel1.TabIndex = 7;
             // 
             // button5
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button5.Location = new System.Drawing.Point(12, 29);
+            this.button5.Location = new System.Drawing.Point(12, 311);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(117, 23);
             this.button5.TabIndex = 8;
-            this.button5.Text = "Running Processes";
+            this.button5.Text = "CLI (BETA)";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(0, 27);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(413, 361);
+            this.tabControl1.Size = new System.Drawing.Size(630, 369);
             this.tabControl1.TabIndex = 8;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.richTextBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(405, 335);
+            this.tabPage1.Size = new System.Drawing.Size(622, 343);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Running Processes";
+            this.tabPage1.Text = "Processes";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // tabPage2
@@ -263,7 +264,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(405, 335);
+            this.tabPage2.Size = new System.Drawing.Size(622, 343);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Rescources";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -299,7 +300,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBarCPU.Location = new System.Drawing.Point(43, 21);
             this.progressBarCPU.Name = "progressBarCPU";
-            this.progressBarCPU.Size = new System.Drawing.Size(342, 32);
+            this.progressBarCPU.Size = new System.Drawing.Size(559, 32);
             this.progressBarCPU.TabIndex = 1;
             // 
             // progressBarRAM
@@ -308,7 +309,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBarRAM.Location = new System.Drawing.Point(43, 99);
             this.progressBarRAM.Name = "progressBarRAM";
-            this.progressBarRAM.Size = new System.Drawing.Size(342, 32);
+            this.progressBarRAM.Size = new System.Drawing.Size(559, 32);
             this.progressBarRAM.TabIndex = 2;
             // 
             // label2
@@ -324,7 +325,7 @@
             // 
             this.lblCPU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCPU.AutoSize = true;
-            this.lblCPU.Location = new System.Drawing.Point(348, 56);
+            this.lblCPU.Location = new System.Drawing.Point(565, 56);
             this.lblCPU.Name = "lblCPU";
             this.lblCPU.Size = new System.Drawing.Size(26, 13);
             this.lblCPU.TabIndex = 4;
@@ -334,7 +335,7 @@
             // 
             this.lblRAM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRAM.AutoSize = true;
-            this.lblRAM.Location = new System.Drawing.Point(348, 134);
+            this.lblRAM.Location = new System.Drawing.Point(565, 134);
             this.lblRAM.Name = "lblRAM";
             this.lblRAM.Size = new System.Drawing.Size(26, 13);
             this.lblRAM.TabIndex = 5;
@@ -343,7 +344,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(198, 5);
+            this.label3.Location = new System.Drawing.Point(9, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 9;
@@ -352,7 +353,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(198, 22);
+            this.label4.Location = new System.Drawing.Point(9, 30);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 10;
@@ -361,7 +362,7 @@
             // lblRAM_Bottom
             // 
             this.lblRAM_Bottom.AutoSize = true;
-            this.lblRAM_Bottom.Location = new System.Drawing.Point(233, 22);
+            this.lblRAM_Bottom.Location = new System.Drawing.Point(44, 30);
             this.lblRAM_Bottom.Name = "lblRAM_Bottom";
             this.lblRAM_Bottom.Size = new System.Drawing.Size(26, 13);
             this.lblRAM_Bottom.TabIndex = 12;
@@ -370,7 +371,7 @@
             // lblCPU_Bottom
             // 
             this.lblCPU_Bottom.AutoSize = true;
-            this.lblCPU_Bottom.Location = new System.Drawing.Point(233, 5);
+            this.lblCPU_Bottom.Location = new System.Drawing.Point(44, 13);
             this.lblCPU_Bottom.Name = "lblCPU_Bottom";
             this.lblCPU_Bottom.Size = new System.Drawing.Size(26, 13);
             this.lblCPU_Bottom.TabIndex = 11;
@@ -382,13 +383,14 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(405, 335);
+            this.tabPage3.Size = new System.Drawing.Size(622, 343);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Performance";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // chart1
             // 
+            this.chart1.BorderlineWidth = 3;
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -406,8 +408,26 @@
             series2.Name = "RAM";
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(399, 329);
+            this.chart1.Size = new System.Drawing.Size(616, 337);
             this.chart1.TabIndex = 0;
+            // 
+            // pcLOGICALDISK
+            // 
+            this.pcLOGICALDISK.CategoryName = "LogicalDisk";
+            this.pcLOGICALDISK.CounterName = "% Free Space";
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(469, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(150, 337);
+            this.panel2.TabIndex = 6;
             // 
             // Form1
             // 
@@ -416,9 +436,6 @@
             this.ClientSize = new System.Drawing.Size(630, 449);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Exo 2", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -439,6 +456,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcRAM)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcLOGICALDISK)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,6 +499,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Diagnostics.PerformanceCounter pcLOGICALDISK;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

@@ -35,6 +35,7 @@
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.okButton = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             this.tableLayoutPanel.Controls.Add(this.textBoxDescription, 1, 4);
             this.tableLayoutPanel.Controls.Add(this.okButton, 1, 5);
             this.tableLayoutPanel.Controls.Add(this.richTextBox1, 0, 4);
+            this.tableLayoutPanel.Controls.Add(this.linkLabel1, 0, 5);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(9, 9);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
@@ -147,6 +149,17 @@
             this.richTextBox1.Text = "This is a project by @Jackson5551 on Github licensed under\nthe GNU General Public" +
     " License v3.0";
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(3, 236);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(76, 13);
+            this.linkLabel1.TabIndex = 26;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "@Jackson5551";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // About
             // 
             this.AcceptButton = this.okButton;
@@ -180,5 +193,6 @@
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.Button okButton;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
