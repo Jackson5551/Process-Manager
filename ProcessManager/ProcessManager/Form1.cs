@@ -90,5 +90,24 @@ namespace ProcessManager
             About frm = new About();
             frm.Show();
         }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            float fcpu = pcCPU.NextValue();
+            float fram = pcRAM.NextValue();
+            progressBarCPU.Value = (int)fcpu;
+            progressBarRAM.Value = (int)fram;
+            lblCPU.Text = string.Format("{0:0.00}%", fcpu);
+            lblCPU_Bottom.Text = string.Format("{0:0.00}%", fcpu);
+            lblRAM.Text = string.Format("{0:0.00}%", fram);
+            lblRAM_Bottom.Text = string.Format("{0:0.00}%", fram);
+            chart1.Series["CPU"].Points.AddY(fcpu);
+            chart1.Series["RAM"].Points.AddY(fram);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            timer.Start();
+        }
     }
 }
