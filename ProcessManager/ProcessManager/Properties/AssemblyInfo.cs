@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ProcessManager")]
 [assembly: AssemblyDescription("This is a project by @Jackson5551 on Github licensed under the GNU General Public License v3.0")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HakCorp")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ProcessManager")]
-[assembly: AssemblyCopyright("Copyright © HakCorp 2018")]
+[assembly: AssemblyCopyright("Copyright © @Jackson5551 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
