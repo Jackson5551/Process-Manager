@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
-using System.ComponentModel;
 
 namespace ProcessManager
 {
@@ -29,7 +28,7 @@ namespace ProcessManager
 
         public void procss()
         {
-            int counter = 1;
+
 
             Process[] processlist = Process.GetProcesses();
 
