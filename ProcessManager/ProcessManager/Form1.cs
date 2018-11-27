@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO;
 
 namespace ProcessManager
 {
@@ -19,6 +20,7 @@ namespace ProcessManager
             InitializeComponent();
             button2.Enabled = false;
             procss();
+            DiskandDriveInfo();
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -28,12 +30,32 @@ namespace ProcessManager
 
         public void procss()
         {
-
+            int counter = 1;
 
             Process[] processlist = Process.GetProcesses();
 
+            dataGridView1.Rows.Clear();
+
             foreach (Process theprocess in processlist)
-            {           
+            {
+                int n = dataGridView1.Rows.Add();
+                dataGridView1.Rows[n].Cells[0].Value = theprocess.ProcessName;
+                dataGridView1.Rows[n].Cells[1].Value = theprocess.Id;
+                dataGridView1.Rows[n].Cells[2].Value = Environment.MachineName;
+                Application.DoEvents(); // This keeps your form responsive by processing events
+            }
+        }
+
+        public void OldProcessList()
+        {
+
+            Process []
+            processlist = Process.GetProcesses();
+
+            richTextBox1.Clear();
+
+            foreach (Process theprocess in processlist)
+            {
                 string prcs = "Process: '" + theprocess.ProcessName + "'  ||  ID: '" + theprocess.Id + "'  ||  Macine Name: '"+Environment.MachineName+"'";
                 richTextBox1.AppendText(prcs);
                 richTextBox1.AppendText("\n");
@@ -47,6 +69,7 @@ namespace ProcessManager
             {
                 process.Kill();
             }
+            procss();
             textBox1.Clear();
             button2.Enabled = false;
         }
@@ -63,7 +86,6 @@ namespace ProcessManager
 
         private void button4_Click(object sender, EventArgs e)
         {
-            richTextBox1.Clear();
             procss();
         }
 
@@ -134,5 +156,36 @@ namespace ProcessManager
         {
             Process.Start("ProcssMan.exe");
         }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            procss();
+        }
+
+        private void cLIBETAToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Process.Start("ProcssMan.exe");
+        }
+
+        public void DiskandDriveInfo()
+        {
+            DriveInfo[] allDrives = DriveInfo.GetDrives();
+            foreach (DriveInfo d in allDrives)
+            {
+                richTextBox2.AppendText("\nDrive " + d.Name);
+                richTextBox2.AppendText("\nDrive Type: " + d.DriveType);
+                if (d.IsReady == true)
+                {
+                    richTextBox2.AppendText("\nVolume Label: " + d.VolumeLabel);
+                    richTextBox2.AppendText("\nFile System:  " + d.DriveFormat);
+                    richTextBox2.AppendText("\nAvalable Space to current User: " + d.AvailableFreeSpace);
+                    richTextBox2.AppendText("\nTotal Avalable Space: " + d.TotalFreeSpace);
+                    richTextBox2.AppendText("\nTotal Size:  " + d.TotalSize);
+                    
+                }
+                richTextBox2.AppendText("\n---------------------------------------------------------------------");
+            }
+        }
+       
     }
 }

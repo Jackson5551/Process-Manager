@@ -16,8 +16,7 @@ namespace ProcessManager
         public Drives()
         {
             InitializeComponent();
-            comboBox1.DataSource = System.IO.DriveInfo.GetDrives();
-            comboBox1.DisplayMember = "Name";
+            DiskandDriveInfo();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -26,6 +25,29 @@ namespace ProcessManager
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        public void DiskandDriveInfo()
+        {
+            DriveInfo[] allDrives = DriveInfo.GetDrives();
+            foreach (DriveInfo d in allDrives)
+            {
+                richTextBox2.AppendText("\nDrive " + d.Name);
+                richTextBox2.AppendText("\nDrive Type: " + d.DriveType);
+                if (d.IsReady == true)
+                {
+                    richTextBox2.AppendText("\nVolume Label: " + d.VolumeLabel);
+                    richTextBox2.AppendText("\nFile System:  " + d.DriveFormat);
+                    richTextBox2.AppendText("\nAvalable Space to current User: " + d.AvailableFreeSpace);
+                    richTextBox2.AppendText("\nTotal Avalable Space: " + d.TotalFreeSpace);
+                    richTextBox2.AppendText("\nTotal Size:  " + d.TotalSize);
+                }
+                richTextBox2.AppendText("\n---------------------------------------------------------------------");
+            }
+        }
+
+        private void closeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }

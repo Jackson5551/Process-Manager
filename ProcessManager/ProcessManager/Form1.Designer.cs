@@ -33,6 +33,7 @@
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -48,6 +49,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblNUMPROCS = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblRAM_Bottom = new System.Windows.Forms.Label();
             this.lblCPU_Bottom = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -73,8 +76,15 @@
             this.computerInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disksAndDrivesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cLIBETAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblNUMPROCS = new System.Windows.Forms.Label();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Image_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Macine_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cLIBETAToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -87,6 +97,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcRAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcLOGICALDISK)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -168,7 +181,7 @@
             this.richTextBox1.Location = new System.Drawing.Point(3, 3);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(457, 337);
+            this.richTextBox1.Size = new System.Drawing.Size(460, 337);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -229,6 +242,24 @@
             this.panel1.Size = new System.Drawing.Size(630, 56);
             this.panel1.TabIndex = 7;
             // 
+            // lblNUMPROCS
+            // 
+            this.lblNUMPROCS.AutoSize = true;
+            this.lblNUMPROCS.Location = new System.Drawing.Point(166, 30);
+            this.lblNUMPROCS.Name = "lblNUMPROCS";
+            this.lblNUMPROCS.Size = new System.Drawing.Size(14, 13);
+            this.lblNUMPROCS.TabIndex = 14;
+            this.lblNUMPROCS.Text = "0";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(99, 30);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Processes:";
+            // 
             // lblRAM_Bottom
             // 
             this.lblRAM_Bottom.AutoSize = true;
@@ -278,6 +309,7 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -290,7 +322,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.richTextBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
@@ -304,9 +335,9 @@
             // 
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button5);
             this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.button3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(469, 3);
             this.panel2.Name = "panel2";
@@ -315,6 +346,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.richTextBox2);
             this.tabPage2.Controls.Add(this.lblRAM);
             this.tabPage2.Controls.Add(this.lblCPU);
             this.tabPage2.Controls.Add(this.label2);
@@ -402,7 +434,10 @@
             chartArea1.Name = "ChartArea1";
             this.chart1.ChartAreas.Add(chartArea1);
             this.chart1.Dock = System.Windows.Forms.DockStyle.Fill;
+            legend1.Font = new System.Drawing.Font("Exo 2", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend1.IsTextAutoFit = false;
             legend1.Name = "Legend1";
+            legend1.TitleFont = new System.Drawing.Font("Exo 2", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(3, 3);
             this.chart1.Name = "chart1";
@@ -473,23 +508,89 @@
             this.cLIBETAToolStripMenuItem.Text = "CLI (BETA)";
             this.cLIBETAToolStripMenuItem.Click += new System.EventHandler(this.cLIBETAToolStripMenuItem_Click);
             // 
-            // label5
+            // tabPage4
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(99, 30);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Processes:";
+            this.tabPage4.Controls.Add(this.panel2);
+            this.tabPage4.Controls.Add(this.dataGridView1);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(622, 343);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Processes";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // lblNUMPROCS
+            // dataGridView1
             // 
-            this.lblNUMPROCS.AutoSize = true;
-            this.lblNUMPROCS.Location = new System.Drawing.Point(166, 30);
-            this.lblNUMPROCS.Name = "lblNUMPROCS";
-            this.lblNUMPROCS.Size = new System.Drawing.Size(14, 13);
-            this.lblNUMPROCS.TabIndex = 14;
-            this.lblNUMPROCS.Text = "0";
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Image_Name,
+            this.PID,
+            this.Macine_Name});
+            this.dataGridView1.ContextMenuStrip = this.contextMenuStrip2;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(463, 338);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // Image_Name
+            // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Exo 2", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Image_Name.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Image_Name.HeaderText = "Image Name";
+            this.Image_Name.Name = "Image_Name";
+            this.Image_Name.ReadOnly = true;
+            // 
+            // PID
+            // 
+            this.PID.HeaderText = "PID";
+            this.PID.Name = "PID";
+            this.PID.ReadOnly = true;
+            // 
+            // Macine_Name
+            // 
+            this.Macine_Name.HeaderText = "Machine Name";
+            this.Macine_Name.Name = "Macine_Name";
+            this.Macine_Name.ReadOnly = true;
+            // 
+            // contextMenuStrip2
+            // 
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem,
+            this.cLIBETAToolStripMenuItem1});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(131, 48);
+            // 
+            // refreshToolStripMenuItem
+            // 
+            this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.refreshToolStripMenuItem.Text = "Refresh";
+            this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
+            // 
+            // cLIBETAToolStripMenuItem1
+            // 
+            this.cLIBETAToolStripMenuItem1.Name = "cLIBETAToolStripMenuItem1";
+            this.cLIBETAToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
+            this.cLIBETAToolStripMenuItem1.Text = "CLI (BETA)";
+            this.cLIBETAToolStripMenuItem1.Click += new System.EventHandler(this.cLIBETAToolStripMenuItem1_Click);
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox2.Location = new System.Drawing.Point(3, 152);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.ReadOnly = true;
+            this.richTextBox2.Size = new System.Drawing.Size(616, 189);
+            this.richTextBox2.TabIndex = 6;
+            this.richTextBox2.Text = "";
             // 
             // Form1
             // 
@@ -523,6 +624,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcRAM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcLOGICALDISK)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -571,6 +675,15 @@
         private System.Windows.Forms.ToolStripMenuItem cLIBETAToolStripMenuItem;
         private System.Windows.Forms.Label lblNUMPROCS;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Image_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Macine_Name;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cLIBETAToolStripMenuItem1;
+        private System.Windows.Forms.RichTextBox richTextBox2;
     }
 }
 
