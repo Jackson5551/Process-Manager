@@ -14,7 +14,6 @@ namespace ProcessManager
 {
     public partial class Form1 : Form
     {
-        int procssid;
         public Form1()
         {
             InitializeComponent();
@@ -30,7 +29,6 @@ namespace ProcessManager
 
         public void procss()
         {
-            int counter = 1;
 
             Process[] processlist = Process.GetProcesses();
 
@@ -38,6 +36,7 @@ namespace ProcessManager
 
             foreach (Process theprocess in processlist)
             {
+                //Fill the DataGrid with info
                 int n = dataGridView1.Rows.Add();
                 dataGridView1.Rows[n].Cells[0].Value = theprocess.ProcessName;
                 dataGridView1.Rows[n].Cells[1].Value = theprocess.Id;
@@ -186,6 +185,20 @@ namespace ProcessManager
                 richTextBox2.AppendText("\n---------------------------------------------------------------------");
             }
         }
-       
+
+        private void restartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            OldProcessList();
+        }
     }
 }
