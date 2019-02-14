@@ -28,3 +28,4 @@ ProcssMan/ProcssMan/ProcssMan.csproj
 ProcessManager/.vs/ProcessManager/v14/.suo
 ProcessManager/ProcessManager/bin/Debug/ProcessManager.exe
 ProcessManager/ProcessManager/bin/Debug/ProcessManager.pdb
+/ProcessManager/.vs/ProcessManager/v15/Server/sqlite3/db.lock

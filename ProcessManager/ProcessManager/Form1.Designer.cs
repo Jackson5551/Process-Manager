@@ -43,9 +43,10 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.restartToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.websiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
@@ -64,12 +65,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Image_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RAM = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Macine_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cLIBETAToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.lblRAM = new System.Windows.Forms.Label();
@@ -88,7 +91,8 @@
             this.computerInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disksAndDrivesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cLIBETAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.button6 = new System.Windows.Forms.Button();
+            this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.refreshToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -104,12 +108,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcRAM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcLOGICALDISK)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.contextMenuStrip3.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(552, 30);
+            this.button1.Location = new System.Drawing.Point(621, 30);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -122,11 +127,10 @@
             this.menuStrip1.Font = new System.Drawing.Font("Exo 2", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.optionsToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(630, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(699, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -175,16 +179,12 @@
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // optionsToolStripMenuItem
-            // 
-            this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.optionsToolStripMenuItem.Text = "Options";
-            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
+            this.aboutToolStripMenuItem,
+            this.toolStripSeparator2,
+            this.websiteToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.helpToolStripMenuItem.Text = "Help";
@@ -192,9 +192,21 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(112, 6);
+            // 
+            // websiteToolStripMenuItem
+            // 
+            this.websiteToolStripMenuItem.Name = "websiteToolStripMenuItem";
+            this.websiteToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.websiteToolStripMenuItem.Text = "Website";
+            this.websiteToolStripMenuItem.Click += new System.EventHandler(this.websiteToolStripMenuItem_Click);
             // 
             // richTextBox1
             // 
@@ -203,11 +215,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.BackColor = System.Drawing.SystemColors.Control;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.ContextMenuStrip = this.contextMenuStrip3;
             this.richTextBox1.Font = new System.Drawing.Font("Exo 2", 8.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(3, 3);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(460, 337);
+            this.richTextBox1.Size = new System.Drawing.Size(529, 377);
             this.richTextBox1.TabIndex = 2;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -234,6 +247,7 @@
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button3.FlatAppearance.BorderSize = 0;
             this.button3.Location = new System.Drawing.Point(40, 29);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(62, 23);
@@ -245,7 +259,7 @@
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button4.Location = new System.Drawing.Point(12, 282);
+            this.button4.Location = new System.Drawing.Point(12, 322);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(117, 23);
             this.button4.TabIndex = 6;
@@ -263,9 +277,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 393);
+            this.panel1.Location = new System.Drawing.Point(0, 433);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(630, 56);
+            this.panel1.Size = new System.Drawing.Size(699, 56);
             this.panel1.TabIndex = 7;
             // 
             // lblNUMPROCS
@@ -325,7 +339,7 @@
             // button5
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button5.Location = new System.Drawing.Point(12, 311);
+            this.button5.Location = new System.Drawing.Point(12, 351);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(117, 23);
             this.button5.TabIndex = 8;
@@ -343,7 +357,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(630, 369);
+            this.tabControl1.Size = new System.Drawing.Size(699, 409);
             this.tabControl1.TabIndex = 8;
             // 
             // tabPage4
@@ -353,7 +367,7 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(622, 343);
+            this.tabPage4.Size = new System.Drawing.Size(691, 383);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Processes";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -366,9 +380,9 @@
             this.panel2.Controls.Add(this.button4);
             this.panel2.Controls.Add(this.button3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(469, 3);
+            this.panel2.Location = new System.Drawing.Point(538, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(150, 337);
+            this.panel2.Size = new System.Drawing.Size(150, 377);
             this.panel2.TabIndex = 6;
             // 
             // dataGridView1
@@ -380,14 +394,16 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Image_Name,
-            this.PID,
-            this.Macine_Name});
+            this.RAM,
+            this.Macine_Name,
+            this.PID});
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip2;
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(463, 338);
+            this.dataGridView1.Size = new System.Drawing.Size(532, 378);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Image_Name
             // 
@@ -398,11 +414,11 @@
             this.Image_Name.ReadOnly = true;
             this.Image_Name.Width = 185;
             // 
-            // PID
+            // RAM
             // 
-            this.PID.HeaderText = "PID";
-            this.PID.Name = "PID";
-            this.PID.ReadOnly = true;
+            this.RAM.HeaderText = "PID";
+            this.RAM.Name = "RAM";
+            this.RAM.ReadOnly = true;
             // 
             // Macine_Name
             // 
@@ -410,39 +426,57 @@
             this.Macine_Name.Name = "Macine_Name";
             this.Macine_Name.ReadOnly = true;
             // 
+            // PID
+            // 
+            this.PID.HeaderText = "RAM Usage";
+            this.PID.Name = "PID";
+            this.PID.ReadOnly = true;
+            // 
             // contextMenuStrip2
             // 
             this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.refreshToolStripMenuItem,
             this.cLIBETAToolStripMenuItem1});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(131, 48);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(130, 48);
             // 
             // refreshToolStripMenuItem
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(129, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // cLIBETAToolStripMenuItem1
             // 
             this.cLIBETAToolStripMenuItem1.Name = "cLIBETAToolStripMenuItem1";
-            this.cLIBETAToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
+            this.cLIBETAToolStripMenuItem1.Size = new System.Drawing.Size(129, 22);
             this.cLIBETAToolStripMenuItem1.Text = "CLI (BETA)";
             this.cLIBETAToolStripMenuItem1.Click += new System.EventHandler(this.cLIBETAToolStripMenuItem1_Click);
             // 
             // tabPage1
             // 
+            this.tabPage1.ContextMenuStrip = this.contextMenuStrip3;
             this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.richTextBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(622, 343);
+            this.tabPage1.Size = new System.Drawing.Size(691, 383);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Processes";
+            this.tabPage1.Text = "Processes (Legacy)";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.Location = new System.Drawing.Point(572, 335);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 3;
+            this.button6.Text = "Refresh";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // tabPage2
             // 
@@ -456,7 +490,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(622, 343);
+            this.tabPage2.Size = new System.Drawing.Size(691, 383);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Rescources";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -466,10 +500,11 @@
             this.richTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox2.Location = new System.Drawing.Point(3, 152);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(616, 189);
+            this.richTextBox2.Size = new System.Drawing.Size(685, 229);
             this.richTextBox2.TabIndex = 6;
             this.richTextBox2.Text = "";
             // 
@@ -477,7 +512,7 @@
             // 
             this.lblRAM.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRAM.AutoSize = true;
-            this.lblRAM.Location = new System.Drawing.Point(565, 134);
+            this.lblRAM.Location = new System.Drawing.Point(634, 134);
             this.lblRAM.Name = "lblRAM";
             this.lblRAM.Size = new System.Drawing.Size(26, 13);
             this.lblRAM.TabIndex = 5;
@@ -487,7 +522,7 @@
             // 
             this.lblCPU.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCPU.AutoSize = true;
-            this.lblCPU.Location = new System.Drawing.Point(565, 56);
+            this.lblCPU.Location = new System.Drawing.Point(634, 56);
             this.lblCPU.Name = "lblCPU";
             this.lblCPU.Size = new System.Drawing.Size(26, 13);
             this.lblCPU.TabIndex = 4;
@@ -508,7 +543,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBarRAM.Location = new System.Drawing.Point(43, 99);
             this.progressBarRAM.Name = "progressBarRAM";
-            this.progressBarRAM.Size = new System.Drawing.Size(559, 32);
+            this.progressBarRAM.Size = new System.Drawing.Size(628, 32);
             this.progressBarRAM.TabIndex = 2;
             // 
             // progressBarCPU
@@ -517,7 +552,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBarCPU.Location = new System.Drawing.Point(43, 21);
             this.progressBarCPU.Name = "progressBarCPU";
-            this.progressBarCPU.Size = new System.Drawing.Size(559, 32);
+            this.progressBarCPU.Size = new System.Drawing.Size(628, 32);
             this.progressBarCPU.TabIndex = 1;
             // 
             // label1
@@ -535,7 +570,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(622, 343);
+            this.tabPage3.Size = new System.Drawing.Size(653, 348);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Performance";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -565,7 +600,7 @@
             series2.Name = "RAM";
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(616, 337);
+            this.chart1.Size = new System.Drawing.Size(647, 342);
             this.chart1.TabIndex = 0;
             // 
             // pcCPU
@@ -620,21 +655,25 @@
             this.cLIBETAToolStripMenuItem.Text = "CLI (BETA)";
             this.cLIBETAToolStripMenuItem.Click += new System.EventHandler(this.cLIBETAToolStripMenuItem_Click);
             // 
-            // button6
+            // contextMenuStrip3
             // 
-            this.button6.Location = new System.Drawing.Point(503, 295);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "Refresh";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.contextMenuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.refreshToolStripMenuItem1});
+            this.contextMenuStrip3.Name = "contextMenuStrip3";
+            this.contextMenuStrip3.Size = new System.Drawing.Size(114, 26);
+            // 
+            // refreshToolStripMenuItem1
+            // 
+            this.refreshToolStripMenuItem1.Name = "refreshToolStripMenuItem1";
+            this.refreshToolStripMenuItem1.Size = new System.Drawing.Size(113, 22);
+            this.refreshToolStripMenuItem1.Text = "Refresh";
+            this.refreshToolStripMenuItem1.Click += new System.EventHandler(this.refreshToolStripMenuItem1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 449);
+            this.ClientSize = new System.Drawing.Size(699, 489);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
@@ -644,7 +683,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Process Manager";
+            this.Text = "Process Manager v2.0.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -665,6 +704,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcRAM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcLOGICALDISK)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.contextMenuStrip3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -675,7 +715,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.TextBox textBox1;
@@ -719,13 +758,18 @@
         private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cLIBETAToolStripMenuItem1;
         private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Image_Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Macine_Name;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem restartToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Image_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RAM;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Macine_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PID;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripMenuItem websiteToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip3;
+        private System.Windows.Forms.ToolStripMenuItem refreshToolStripMenuItem1;
     }
 }
 

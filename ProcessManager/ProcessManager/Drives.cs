@@ -51,5 +51,15 @@ namespace ProcessManager
         {
             this.Close();
         }
+
+        private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DiskandDriveInfo();
+        }
+
+        private void closeToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

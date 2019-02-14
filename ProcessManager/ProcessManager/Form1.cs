@@ -41,6 +41,7 @@ namespace ProcessManager
                 dataGridView1.Rows[n].Cells[0].Value = theprocess.ProcessName;
                 dataGridView1.Rows[n].Cells[1].Value = theprocess.Id;
                 dataGridView1.Rows[n].Cells[2].Value = Environment.MachineName;
+                dataGridView1.Rows[n].Cells[3].Value = theprocess.PagedMemorySize64;
                 Application.DoEvents(); // This keeps your form responsive by processing events
             }
         }
@@ -197,6 +198,20 @@ namespace ProcessManager
         }
 
         private void button6_Click(object sender, EventArgs e)
+        {
+            OldProcessList();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+        }
+
+        private void websiteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/Jackson5551/Process-Manager");
+        }
+
+        private void refreshToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             OldProcessList();
         }
