@@ -9,17 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
+using System.Threading;
+using System.Management;
 
 namespace ProcessManager
 {
     public partial class Form1 : Form
     {
+        private delegate void DELAGATE();
         public Form1()
         {
             InitializeComponent();
-            button2.Enabled = false;
+
             procss();
+
             DiskandDriveInfo();
+
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -29,7 +34,7 @@ namespace ProcessManager
 
         public void procss()
         {
-
+            
             Process[] processlist = Process.GetProcesses();
 
             dataGridView1.Rows.Clear();
@@ -41,9 +46,40 @@ namespace ProcessManager
                 dataGridView1.Rows[n].Cells[0].Value = theprocess.ProcessName;
                 dataGridView1.Rows[n].Cells[1].Value = theprocess.Id;
                 dataGridView1.Rows[n].Cells[2].Value = Environment.MachineName;
-                dataGridView1.Rows[n].Cells[3].Value = theprocess.PagedMemorySize64;
+                dataGridView1.Rows[n].Cells[3].Value = theprocess.PagedMemorySize64 / 1024 / 1024 + " MB";
                 Application.DoEvents(); // This keeps your form responsive by processing events
             }
+        }
+
+
+        private async Task getCPUInfoAsync()
+        {
+            await Task.Run(() => getCPUInfo());
+        }
+
+        public void getCPUInfo()
+        {
+            Delegate del = new DELAGATE(gci_content);
+            this.Invoke(del);
+        }
+
+        private void gci_content()
+        {
+            string speed = "";
+            string cpumodel = "";
+            var searcher = new ManagementObjectSearcher("select MaxClockSpeed from Win32_Processor");
+            foreach (var item in searcher.Get())
+            {
+                var clockSpeed = 0.001f * (uint)item["MaxClockSpeed"];
+                speed = clockSpeed.ToString();
+            }
+            ManagementObjectSearcher mos = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM Win32_Processor");
+            foreach (ManagementObject mo in mos.Get())
+            {
+                var model = mo["Name"];
+                cpumodel = model.ToString();
+            }
+            label6.Text = cpumodel + "\n" + Environment.ProcessorCount.ToString() + " Core";
         }
 
         public void OldProcessList()
@@ -71,12 +107,6 @@ namespace ProcessManager
             }
             procss();
             textBox1.Clear();
-            button2.Enabled = false;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            button2.Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -112,6 +142,7 @@ namespace ProcessManager
             frm.Show();
         }
 
+        int counter = 0;
         private void timer_Tick(object sender, EventArgs e)
         {
             Process[] processlist = Process.GetProcesses();
@@ -126,13 +157,27 @@ namespace ProcessManager
             lblRAM.Text = string.Format("{0:0.00}%", fram);
             lblRAM_Bottom.Text = string.Format("{0:0.00}%", fram);
             chart1.Series["CPU"].Points.AddY(fcpu);
+            chart2.Series["CPU"].Points.AddY(fcpu);
             chart1.Series["RAM"].Points.AddY(fram);
+            chart3.Series["RAM"].Points.AddY(fram);
             lblNUMPROCS.Text = string.Format("{0:0}", runprocs);
+            counter = counter + 1;
+            if (counter == 60)
+            {
+                chart1.Series["CPU"].Points.Clear();
+                chart2.Series["CPU"].Points.Clear();
+                chart1.Series["RAM"].Points.Clear();
+                chart3.Series["RAM"].Points.Clear();
+                procss();
+                OldProcessList();
+                counter = 0;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             timer.Start();
+            getCPUInfoAsync();
         }
 
         private void lblTotalSpace_Click(object sender, EventArgs e)
@@ -178,10 +223,10 @@ namespace ProcessManager
                 {
                     richTextBox2.AppendText("\nVolume Label: " + d.VolumeLabel);
                     richTextBox2.AppendText("\nFile System:  " + d.DriveFormat);
-                    richTextBox2.AppendText("\nAvalable Space to current User: " + d.AvailableFreeSpace);
-                    richTextBox2.AppendText("\nTotal Avalable Space: " + d.TotalFreeSpace);
-                    richTextBox2.AppendText("\nTotal Size:  " + d.TotalSize);
-                    
+                    richTextBox2.AppendText("\nAvalable Space to current User: " + d.AvailableFreeSpace / 1024 / 1024 / 1024 + "GB");
+                    richTextBox2.AppendText("\nTotal Avalable Space: " + d.TotalFreeSpace / 1024 / 1024 / 1024 + "GB");
+                    richTextBox2.AppendText("\nTotal Size:  " + d.TotalSize / 1024 / 1024 / 1024 + "GB");
+
                 }
                 richTextBox2.AppendText("\n---------------------------------------------------------------------");
             }
@@ -214,6 +259,40 @@ namespace ProcessManager
         private void refreshToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             OldProcessList();
+        }
+
+        private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode.ToString() == "R")
+            {
+                procss();
+            }
+            else if (e.Control && e.KeyCode.ToString() == "T")
+            {
+                Process.Start("ProcssMan.exe");
+            }
+        }
+
+        private void richTextBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode.ToString() == "R")
+            {
+                OldProcessList();
+            }
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control && e.KeyCode.ToString() == "T")
+            {
+                Process.Start("ProcssMan.exe");
+            }
+        }
+
+        private void refreshToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            richTextBox2.Clear();
+            DiskandDriveInfo();
         }
     }
 }

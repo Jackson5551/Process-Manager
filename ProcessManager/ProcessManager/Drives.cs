@@ -16,6 +16,7 @@ namespace ProcessManager
         public Drives()
         {
             InitializeComponent();
+            richTextBox2.Clear();
             DiskandDriveInfo();
         }
 
@@ -37,11 +38,11 @@ namespace ProcessManager
                 richTextBox2.AppendText("\nDrive Type: " + d.DriveType);
                 if (d.IsReady == true)
                 {
-                    richTextBox2.AppendText("\nVolume Label: " + d.VolumeLabel);
+                    richTextBox2.AppendText("\nVolume Label: " + d.VolumeLabel );
                     richTextBox2.AppendText("\nFile System:  " + d.DriveFormat);
-                    richTextBox2.AppendText("\nAvalable Space to current User: " + d.AvailableFreeSpace);
-                    richTextBox2.AppendText("\nTotal Avalable Space: " + d.TotalFreeSpace);
-                    richTextBox2.AppendText("\nTotal Size:  " + d.TotalSize);
+                    richTextBox2.AppendText("\nAvalable Space to current User: " + d.AvailableFreeSpace / 1024 / 1024 / 1024 + "GB");
+                    richTextBox2.AppendText("\nTotal Avalable Space: " + d.TotalFreeSpace / 1024 / 1024 / 1024 + "GB");
+                    richTextBox2.AppendText("\nTotal Size:  " + d.TotalSize / 1024 / 1024 / 1024 + "GB");
                 }
                 richTextBox2.AppendText("\n---------------------------------------------------------------------");
             }
@@ -54,12 +55,24 @@ namespace ProcessManager
 
         private void refreshToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            richTextBox2.Clear();
             DiskandDriveInfo();
         }
 
         private void closeToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Drives_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void refreshToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            richTextBox2.Clear();
+            DiskandDriveInfo();
         }
     }
 }
