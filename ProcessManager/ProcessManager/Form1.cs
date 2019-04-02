@@ -253,7 +253,17 @@ namespace ProcessManager
 
         private void websiteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Process.Start("https://jackson5551.github.io/ProcessManagerNet/");
+        }
+
+        private void projectPageToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             Process.Start("https://github.com/Jackson5551/Process-Manager");
+        }
+
+        private void jackson5551sWebsiteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://jackson5551.github.io/");
         }
 
         private void refreshToolStripMenuItem1_Click(object sender, EventArgs e)

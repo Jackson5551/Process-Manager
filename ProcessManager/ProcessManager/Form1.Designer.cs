@@ -110,6 +110,8 @@
             this.computerInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disksAndDrivesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cLIBETAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.projectPageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jackson5551sWebsiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -208,7 +210,9 @@
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem,
             this.toolStripSeparator2,
-            this.websiteToolStripMenuItem});
+            this.websiteToolStripMenuItem,
+            this.projectPageToolStripMenuItem,
+            this.jackson5551sWebsiteToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.helpToolStripMenuItem.Text = "Help";
@@ -216,19 +220,19 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(112, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(191, 6);
             // 
             // websiteToolStripMenuItem
             // 
             this.websiteToolStripMenuItem.Name = "websiteToolStripMenuItem";
-            this.websiteToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
+            this.websiteToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.websiteToolStripMenuItem.Text = "Website";
             this.websiteToolStripMenuItem.Click += new System.EventHandler(this.websiteToolStripMenuItem_Click);
             // 
@@ -703,6 +707,7 @@
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 347);
             this.label6.Name = "label6";
@@ -810,6 +815,20 @@
             this.cLIBETAToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.cLIBETAToolStripMenuItem.Text = "CLI   (CTRL + T)";
             this.cLIBETAToolStripMenuItem.Click += new System.EventHandler(this.cLIBETAToolStripMenuItem_Click);
+            // 
+            // projectPageToolStripMenuItem
+            // 
+            this.projectPageToolStripMenuItem.Name = "projectPageToolStripMenuItem";
+            this.projectPageToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.projectPageToolStripMenuItem.Text = "Project Page";
+            this.projectPageToolStripMenuItem.Click += new System.EventHandler(this.projectPageToolStripMenuItem_Click);
+            // 
+            // jackson5551sWebsiteToolStripMenuItem
+            // 
+            this.jackson5551sWebsiteToolStripMenuItem.Name = "jackson5551sWebsiteToolStripMenuItem";
+            this.jackson5551sWebsiteToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.jackson5551sWebsiteToolStripMenuItem.Text = "@Jackson5551\'s Website";
+            this.jackson5551sWebsiteToolStripMenuItem.Click += new System.EventHandler(this.jackson5551sWebsiteToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -929,6 +948,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabPage tabPage6;
         private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.ToolStripMenuItem projectPageToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem jackson5551sWebsiteToolStripMenuItem;
     }
 }
 
