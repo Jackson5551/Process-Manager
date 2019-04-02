@@ -112,6 +112,7 @@
             this.computerInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disksAndDrivesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cLIBETAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.licenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -175,33 +176,33 @@
             // computerToolStripMenuItem
             // 
             this.computerToolStripMenuItem.Name = "computerToolStripMenuItem";
-            this.computerToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.computerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.computerToolStripMenuItem.Text = "Computer";
             this.computerToolStripMenuItem.Click += new System.EventHandler(this.computerToolStripMenuItem_Click);
             // 
             // activeDirectorysToolStripMenuItem
             // 
             this.activeDirectorysToolStripMenuItem.Name = "activeDirectorysToolStripMenuItem";
-            this.activeDirectorysToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.activeDirectorysToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.activeDirectorysToolStripMenuItem.Text = "Drives";
             this.activeDirectorysToolStripMenuItem.Click += new System.EventHandler(this.activeDirectorysToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(119, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // restartToolStripMenuItem
             // 
             this.restartToolStripMenuItem.Name = "restartToolStripMenuItem";
-            this.restartToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.restartToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.restartToolStripMenuItem.Text = "Restart";
             this.restartToolStripMenuItem.Click += new System.EventHandler(this.restartToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -209,6 +210,7 @@
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem,
+            this.licenseToolStripMenuItem,
             this.toolStripSeparator2,
             this.websiteToolStripMenuItem,
             this.projectPageToolStripMenuItem,
@@ -830,6 +832,13 @@
             this.cLIBETAToolStripMenuItem.Text = "CLI   (CTRL + T)";
             this.cLIBETAToolStripMenuItem.Click += new System.EventHandler(this.cLIBETAToolStripMenuItem_Click);
             // 
+            // licenseToolStripMenuItem
+            // 
+            this.licenseToolStripMenuItem.Name = "licenseToolStripMenuItem";
+            this.licenseToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.licenseToolStripMenuItem.Text = "License";
+            this.licenseToolStripMenuItem.Click += new System.EventHandler(this.LicenseToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -950,6 +959,7 @@
         private System.Windows.Forms.TabPage tabPage7;
         private System.Windows.Forms.ToolStripMenuItem projectPageToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem jackson5551sWebsiteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem licenseToolStripMenuItem;
     }
 }
 

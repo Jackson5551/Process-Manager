@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.168
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessManager", "ProcessManager\ProcessManager.csproj", "{85E29571-438B-4495-8A56-0E3C5F9DAAE3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcssMan", "..\ProcssMan\ProcssMan\ProcssMan.csproj", "{20399826-9BBA-4D3C-959F-0D0772865B1D}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ProcessManager_Setup", "ProcessManager_Setup\ProcessManager_Setup.vdproj", "{F5197C49-1D26-4626-B195-A5787AC41331}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{BD329B41-FCD9-4997-9FD6-C4E68AF4B591}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,8 +23,8 @@ Global
 		{20399826-9BBA-4D3C-959F-0D0772865B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20399826-9BBA-4D3C-959F-0D0772865B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20399826-9BBA-4D3C-959F-0D0772865B1D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F5197C49-1D26-4626-B195-A5787AC41331}.Debug|Any CPU.ActiveCfg = Debug
-		{F5197C49-1D26-4626-B195-A5787AC41331}.Release|Any CPU.ActiveCfg = Release
+		{BD329B41-FCD9-4997-9FD6-C4E68AF4B591}.Debug|Any CPU.ActiveCfg = Debug
+		{BD329B41-FCD9-4997-9FD6-C4E68AF4B591}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

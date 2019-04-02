@@ -177,7 +177,9 @@ namespace ProcessManager
         private void Form1_Load(object sender, EventArgs e)
         {
             timer.Start();
+#pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
             getCPUInfoAsync();
+#pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
 
         private void lblTotalSpace_Click(object sender, EventArgs e)
@@ -303,6 +305,12 @@ namespace ProcessManager
         {
             richTextBox2.Clear();
             DiskandDriveInfo();
+        }
+
+        private void LicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Licensefrm frm = new Licensefrm();
+            frm.Show();
         }
     }
 }
