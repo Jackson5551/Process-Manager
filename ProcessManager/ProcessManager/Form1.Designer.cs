@@ -56,6 +56,8 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.websiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.projectPageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.jackson5551sWebsiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.contextMenuStrip3 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.refreshToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -110,8 +112,6 @@
             this.computerInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disksAndDrivesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cLIBETAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.projectPageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.jackson5551sWebsiteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.contextMenuStrip3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -235,6 +235,20 @@
             this.websiteToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.websiteToolStripMenuItem.Text = "Website";
             this.websiteToolStripMenuItem.Click += new System.EventHandler(this.websiteToolStripMenuItem_Click);
+            // 
+            // projectPageToolStripMenuItem
+            // 
+            this.projectPageToolStripMenuItem.Name = "projectPageToolStripMenuItem";
+            this.projectPageToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.projectPageToolStripMenuItem.Text = "Project Page";
+            this.projectPageToolStripMenuItem.Click += new System.EventHandler(this.projectPageToolStripMenuItem_Click);
+            // 
+            // jackson5551sWebsiteToolStripMenuItem
+            // 
+            this.jackson5551sWebsiteToolStripMenuItem.Name = "jackson5551sWebsiteToolStripMenuItem";
+            this.jackson5551sWebsiteToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.jackson5551sWebsiteToolStripMenuItem.Text = "@Jackson5551\'s Website";
+            this.jackson5551sWebsiteToolStripMenuItem.Click += new System.EventHandler(this.jackson5551sWebsiteToolStripMenuItem_Click);
             // 
             // richTextBox1
             // 
@@ -816,20 +830,6 @@
             this.cLIBETAToolStripMenuItem.Text = "CLI   (CTRL + T)";
             this.cLIBETAToolStripMenuItem.Click += new System.EventHandler(this.cLIBETAToolStripMenuItem_Click);
             // 
-            // projectPageToolStripMenuItem
-            // 
-            this.projectPageToolStripMenuItem.Name = "projectPageToolStripMenuItem";
-            this.projectPageToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.projectPageToolStripMenuItem.Text = "Project Page";
-            this.projectPageToolStripMenuItem.Click += new System.EventHandler(this.projectPageToolStripMenuItem_Click);
-            // 
-            // jackson5551sWebsiteToolStripMenuItem
-            // 
-            this.jackson5551sWebsiteToolStripMenuItem.Name = "jackson5551sWebsiteToolStripMenuItem";
-            this.jackson5551sWebsiteToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
-            this.jackson5551sWebsiteToolStripMenuItem.Text = "@Jackson5551\'s Website";
-            this.jackson5551sWebsiteToolStripMenuItem.Click += new System.EventHandler(this.jackson5551sWebsiteToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -844,7 +844,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Process Manager v2.0.0";
+            this.Text = "Process Manager v2.0.0 Pre-Release";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.menuStrip1.ResumeLayout(false);
