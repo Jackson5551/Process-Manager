@@ -17,7 +17,7 @@ namespace ProcssMan
             Console.ForegroundColor = ConsoleColor.White;
             int counter = 1;
             string processName;
-            Console.WriteLine("Process Manager v1.0.0");
+            Console.WriteLine("Process Manager v2.0.0");
             Console.WriteLine("Copyright (c) 2014 - 2019 @Jackson5551");
             Console.WriteLine("This is a project by @Jackson5551 on Github licensed under the GNU General Public License v3.0.");
             Console.WriteLine("Visit: https://github.com/Jackson5551/Process-Manager to learn more.");

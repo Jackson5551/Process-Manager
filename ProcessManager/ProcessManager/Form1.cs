@@ -11,6 +11,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Threading;
 using System.Management;
+using Microsoft.VisualBasic.Devices;
+using System.Runtime.InteropServices;
 
 namespace ProcessManager
 {
@@ -24,7 +26,6 @@ namespace ProcessManager
             procss();
 
             DiskandDriveInfo();
-
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
@@ -52,15 +53,17 @@ namespace ProcessManager
         }
 
 
-        private async Task getCPUInfoAsync()
+        private async Task getSystemInfoAsync()
         {
-            await Task.Run(() => getCPUInfo());
+            await Task.Run(() => getSystemInfo());
         }
 
-        public void getCPUInfo()
+        public void getSystemInfo()
         {
             Delegate del = new DELAGATE(gci_content);
             this.Invoke(del);
+            Delegate del2 = new DELAGATE(gram_content);
+            this.Invoke(del2);
         }
 
         private void gci_content()
@@ -80,6 +83,92 @@ namespace ProcessManager
                 cpumodel = model.ToString();
             }
             label6.Text = cpumodel + "\n" + Environment.ProcessorCount.ToString() + " Core";
+            GetComponent("Win32_VideoController", "Name");
+            GetComponent("Win32_PhysicalMemory", "Capacity");
+            GetComponent("Win32_PhysicalMemory", "ConfiguredClockSpeed");
+            GetComponent("Win32_PhysicalMemory", "Manufacturer");
+            GetComponent("Win32_OperatingSystem", "FreePhysicalMemory");
+
+            //lblCPU = pcRAM.
+        }
+
+        private void gram_content()
+        {
+        }
+
+        private void GetComponent(string hwclass, string syntax)
+        {
+            ManagementObjectSearcher mos = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM " + hwclass);
+            foreach(ManagementObject mo in mos.Get())
+            {
+                string gpu;
+                if (hwclass == "Win32_VideoController")
+                {
+                    gpu = mo[syntax].ToString();
+                    label13.Text = gpu;
+                }
+                else if (hwclass == "Win32_PhysicalMemory")
+                {
+                    if (syntax =="Capacity")
+                    {
+                        UInt64 cap = (UInt64)mo["Capacity"];
+                        cap = cap * 2 / 1024 / 1024 / 1024;
+                        label7.Text = cap.ToString() + " GB Total";
+                    }
+                    else if (syntax == "ConfiguredClockSpeed")
+                    {
+                        int clockspeed;
+                        UInt32 freq = (UInt32)mo["ConfiguredClockSpeed"];
+                        clockspeed = (int)freq;
+                        label8.Text = clockspeed.ToString() + " MHz";
+                    }
+                    else if (syntax == "Manufacturer")
+                    {
+                        string manf = mo["Manufacturer"].ToString();
+                        label9.Text = "Manufacturer: " + manf;
+                    }
+                }
+                else if (hwclass== "Win32_OperatingSystem")
+                {
+                    if (syntax == "FreePhysicalMemory")
+                    {
+                        object propertyobj = mo["FreePhysicalMemory"];
+                        ulong freemem = (ulong)propertyobj * 1024 / 1024 / 1024 /1024;
+                        label10.Text = freemem.ToString() + " GB Free";
+                    }
+                }
+            }
+        }
+
+        private void getUsedMemory()
+        {
+            ManagementObjectSearcher mos2 = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM " + "Win32_PhysicalMemory");
+            ManagementObjectSearcher mos3 = new ManagementObjectSearcher("root\\CIMV2", "SELECT * FROM " + "Win32_OperatingSystem");
+            ulong usedmem;
+            UInt64 CAP = 0;
+            ulong avl = 0;
+            foreach (ManagementObject mo2 in mos2.Get())
+            {
+                UInt64 cap = (UInt64)mo2["Capacity"];
+                cap = cap * 2 / 1024 / 1024 / 1024;
+                CAP = cap;
+                label7.Text = cap.ToString() + " GB Total";
+            }
+
+            foreach (ManagementObject mo3 in mos3.Get())
+            {
+                object propertyobj = mo3["FreePhysicalMemory"];
+                ulong freemem = (ulong)propertyobj * 1024 / 1024 / 1024 / 1024;
+                avl = freemem;
+                label10.Text = freemem.ToString() + " GB Free";
+            }
+            usedmem = CAP - avl;
+            label12.Text = usedmem.ToString() + " GB Used";
+        }
+
+        static ulong GetTotalMemoryInBytes()
+        {
+            return new Microsoft.VisualBasic.Devices.ComputerInfo().TotalPhysicalMemory;
         }
 
         public void OldProcessList()
@@ -161,6 +250,9 @@ namespace ProcessManager
             chart1.Series["RAM"].Points.AddY(fram);
             chart3.Series["RAM"].Points.AddY(fram);
             lblNUMPROCS.Text = string.Format("{0:0}", runprocs);
+            GetComponent("Win32_PhysicalMemory", "ConfiguredClockSpeed");
+            GetComponent("Win32_OperatingSystem", "FreePhysicalMemory");
+            getUsedMemory();
             counter = counter + 1;
             if (counter == 60)
             {
@@ -178,7 +270,7 @@ namespace ProcessManager
         {
             timer.Start();
 #pragma warning disable CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
-            getCPUInfoAsync();
+            getSystemInfoAsync();
 #pragma warning restore CS4014 // Because this call is not awaited, execution of the current method continues before the call is completed
         }
 

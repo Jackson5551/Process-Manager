@@ -110,7 +110,7 @@ namespace ProcessManager
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://github.com/Jackson5551/Process-Manager");
+            Process.Start("https://jackson5551.github.io/ProcessManagerNet");
         }
 
         private void okButton_Click(object sender, EventArgs e)
